@@ -6,7 +6,7 @@ import {
 } from "@aws-amplify/ui-react";
 
 
-export default function NavBar() {
+export default function NavBar({singOut}) {
 	return (
 	  <nav className="nav">
 		<Link to="/" className="site-title">
@@ -19,6 +19,7 @@ export default function NavBar() {
 			<CustomLink to="/Scores">Scores</CustomLink>
 			<CustomLink to="/Experts">Experts</CustomLink>
 			<CustomLink to="/Skills">Skills</CustomLink>
+			<CustomLink to="/SignOut" onClick={logout}>SignOut</CustomLink> 
 		</ul>
 	  </nav>
 	)
@@ -26,7 +27,7 @@ export default function NavBar() {
 
 function CustomLink ({to, children, ...props}) {
 	
-	const resolvedPath = useResolvedPath(to)
+const resolvedPath = useResolvedPath(to)
 const isActive = useMatch({ path:resolvedPath.pathname, end:true })
 
 	return (
@@ -36,4 +37,9 @@ const isActive = useMatch({ path:resolvedPath.pathname, end:true })
 		</Link>
 	</li>
 	)
+}
+
+function logout(event) {
+	localStorage.clear();
+	window.location.href = '/';
 }
