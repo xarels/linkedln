@@ -17,7 +17,6 @@ function App({ signOut }) {
           <Route path="/" element={<Home />} />
           <Route path="/Scores" element={<Scores />} />
           <Route path="/Experts" element={<Experts />} />
-          <Route path="/Skills" element={<Skills />} />
         </Routes>
       </div>
     </>

@@ -1,6 +1,8 @@
-import React, {useState} from "react";
+import React, {useState, useCallback, useEffect} from "react";
+import RatingStars from "./ratingStars/RatingStars";
 
 function Item (props) {
+    const [data, setData] = useState(props);
 
   function getCategories() {
     return Object.keys(props.value.scores);
@@ -14,31 +16,34 @@ function getScore(category, skill) {
     return props.value.scores[category][skill];
 }
 
-const [isActive, setIsActive] = useState(false);
-
     return (
       <React.Fragment>
         <div className='accordion_wrapper'>
-            <h1>Something</h1>
+            <h1>Scores Collection:</h1>
             <div className="scores">
             {
             getCategories().map((category) => {
             return <div className="categories"
-                    onClick={() => setIsActive(!isActive)}
-                    >   
+                    >  
                         <div>{category}</div>
-                        <div className="sign">{isActive ? '-' : '+'}</div>
+                        <div className="skills_wrapper">
                     {
                         getSkills(category).map((skill) => {
-                            return isActive && (<div className="skills">
+
+                            return (
+                            <div className="skills">
                                 <p>{skill}</p>
-                                <p>{getScore(category,skill)}</p>
+                                <div>
+                                    <RatingStars value={getScore(category,skill)}/>
+                                </div>
                             </div>);
-                        })
-                    }
+                        })                       
+                    }       
+                    </div>
                 </div>
             })}
             </div>
+            <button>Update Scores</button>
         </div>
       </React.Fragment>
     );

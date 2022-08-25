@@ -15,10 +15,9 @@ export default function NavBar({singOut}) {
 		</Link>
 
 		<ul>
-			<CustomLink to="/">Home</CustomLink>
+
 			<CustomLink to="/Scores">Scores</CustomLink>
 			<CustomLink to="/Experts">Experts</CustomLink>
-			<CustomLink to="/Skills">Skills</CustomLink>
 			<CustomLink to="/SignOut" onClick={logout}>SignOut</CustomLink> 
 		</ul>
 	  </nav>
