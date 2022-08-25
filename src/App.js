@@ -5,7 +5,8 @@ import Scores from "./pages/Scores";
 import Experts from "./pages/Experts";
 import Skills from "./pages/Skills";
 import { Route, Routes } from "react-router-dom";
-import { withAuthenticator } from "@aws-amplify/ui-react";
+import { withAuthenticator, Image } from "@aws-amplify/ui-react";
+import Logo from "./RELX 1 (LOGO).svg";
 
 function App({ signOut }) {
   //	<Button onClick={signOut}>Sign Out</Button>
@@ -19,6 +20,7 @@ function App({ signOut }) {
           <Route path="/Experts" element={<Experts />} />
         </Routes>
       </div>
+      <div><div className="logo_holder"><Image src={Logo} className="homelogo" alt="RELINK" /></div></div>;
     </>
   );
 }

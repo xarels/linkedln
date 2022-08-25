@@ -19,7 +19,7 @@ function getScore(category, skill) {
     return (
       <React.Fragment>
         <div className='accordion_wrapper'>
-            <h1>Scores Collection:</h1>
+            <h1 className="homeh1">Scores Collection</h1>
             <div className="scores">
             {
             getCategories().map((category) => {
@@ -43,7 +43,7 @@ function getScore(category, skill) {
                 </div>
             })}
             </div>
-            <button>Update Scores</button>
+            <button className="score_button">Update Scores</button>
         </div>
       </React.Fragment>
     );

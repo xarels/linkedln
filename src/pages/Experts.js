@@ -19,13 +19,13 @@ const formSubmitted = useCallback((event) => {
 });
 
 	return (
-	  <div>
+	  <div className="searchBar_container">
+		<h1 className="homeh1">Search for the experts</h1>
 		<form className="searchExpertForm" onSubmit={formSubmitted}>
-		  <label htmlFor="searchExpert">Enter a Skill:</label>
 		  <input
 			id="searchExpert"
 			name="searchExpert"
-			
+			placeholder="Enter a skill..."
 		  />
 		  <button onClick={onsearchExpertChange}>Search for Experts</button>
 		</form>		

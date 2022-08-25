@@ -5,7 +5,7 @@ const RatingStars = (props) => {
     const [gradeIndex, setGradeIndex] = useState(props.value);
     const GRADES = ['0','1', '2', '3', '4', '5'];
     const activeStar = {
-        fill: 'yellow'
+        fill: '#FFA400'
     };
 
     useEffect(()=>{console.log(gradeIndex);console.group(props)},[gradeIndex])
